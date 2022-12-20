@@ -1,0 +1,47 @@
+POST localhost:3000/bank/register
+
+###
+
+after register min balance is 5000
+
+POST localhost:3000/bank/login
+{username, password}
+passport-local - get token
+200
+
+###
+POST /bank/change_password
+    {email, oldPassword, newPassword}
+    
+    passport-jwt - pass token
+    201
+###
+POST /bank/forgot_password
+    {email, username}
+    
+    reset password and response show
+    200
+
+###
+GET /bank/credit/{amount}
+
+    passport-jwt - pass token
+    authentication is required
+###
+
+GET /bank/bills?electricity=600
+	    passport-jwt - pass token
+        authentication is required
+        
+        response = you have paid electricity bill worth Rs. 600/-
+        200
+###
+
+GET /bank/bills?phone=800
+        authentication is required
+
+        you have paid electricity bill worth Rs. 600/-
+        200
+    ###
+
+
